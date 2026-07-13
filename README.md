@@ -20,14 +20,19 @@ Room Extraction: Parsers the user input into a list of room objects.
 Connection Extraction: Identifies adjacency and openings (doors/windows).
 Room Positioning: Calculates [x, y] coordinates based on room dimensions and connectivity.
 Furniture & Finalization: Injects furniture assets and calculates total square footage.
-🚀 Getting Started
-Install Dependencies:
-pip install langchain langchain-huggingface langgraph pydantic huggingface-hub
-API Key: Ensure a HuggingFace API token is set in your environment variables as HUGGINGFACEHUB_API_TOKEN.
-Run the App: Invoke the app object with a user_input string.
-📊 Output Schema
-The final output is a validated JSON following the FloorPlanSchema:
 
-rooms: Array of objects (type, id, dimensions, position, windows, doors, furniture).
-connections: Array of directional links between rooms.
-total_area: Integer representing the total area in square inches.
+## 🚀 Getting Started
+
+1. **Install Dependencies**:
+   ```bash
+   pip install langchain langchain-huggingface langgraph pydantic huggingface-hub
+   ```
+2. **API Key**: Ensure a HuggingFace API token is set in your environment variables as `HUGGINGFACEHUB_API_TOKEN`.
+3. **Run the App**: Invoke the `app` object with a `user_input` string.
+
+## 📊 Output Schema
+
+The final output is a validated JSON following the `FloorPlanSchema`:
+- `rooms`: Array of objects (type, id, dimensions, position, windows, doors, furniture).
+- `connections`: Array of directional links between rooms.
+- `total_area`: Integer representing the total area in square inches.
