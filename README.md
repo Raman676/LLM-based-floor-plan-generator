@@ -1,25 +1,30 @@
-# LLM-based-floor-plan-generator
-🏗️ AI Floor Plan Generator
-This project implements a multi-stage LangGraph workflow to transform natural language descriptions into structured floor plan JSON data. It leverages LangChain, HuggingFace LLMs, and Pydantic for robust data extraction and spatial positioning.
+# 🏗️ AI Floor Plan Generator
 
-🌟 Features
-Natural Language Understanding: Extracts room types, quantities, and dimensions from conversational text.
-Autonomous Positioning: Logic-based spatial arrangement of rooms relative to one another.
-Connection Mapping: Identifies doors and windows, linking rooms logically.
-Deterministic Furniture Engine: Automatically populates rooms with appropriate furniture (e.g., wardrobes in bedrooms, sinks in kitchens).
-Area Normalization: Supports multiple units (sq ft, sq meters) and converts them to square inches for internal consistency.
-🛠️ Tech Stack
-Orchestration: LangGraph
-LLM Framework: LangChain / LangChain-HuggingFace
-Data Validation: Pydantic v2
-Model: openai/gpt-oss-20b (via HuggingFace Endpoint)
-📈 Workflow Architecture
+This project implements a multi-stage **LangGraph** workflow to transform natural language descriptions into structured floor plan JSON data. It leverages **LangChain**, **HuggingFace LLMs**, and **Pydantic** for robust data extraction and spatial positioning.
+
+## 🌟 Features
+
+- **Natural Language Understanding**: Extracts room types, quantities, and dimensions from conversational text.
+- **Autonomous Positioning**: Logic-based spatial arrangement of rooms relative to one another.
+- **Connection Mapping**: Identifies doors and windows, linking rooms logically.
+- **Deterministic Furniture Engine**: Automatically populates rooms with appropriate furniture (e.g., wardrobes in bedrooms, sinks in kitchens).
+- **Area Normalization**: Supports multiple units (sq ft, sq meters) and converts them to square inches for internal consistency.
+
+## 🛠️ Tech Stack
+
+- **Orchestration**: LangGraph
+- **LLM Framework**: LangChain / LangChain-HuggingFace
+- **Data Validation**: Pydantic v2
+- **Model**: `openai/gpt-oss-20b` (via HuggingFace Endpoint)
+
+## 📈 Workflow Architecture
+
 The generation process follows a linear directed graph:
+1. **Room Extraction**: Parsers the user input into a list of room objects.
+2. **Connection Extraction**: Identifies adjacency and openings (doors/windows).
+3. **Room Positioning**: Calculates `[x, y]` coordinates based on room dimensions and connectivity.
+4. **Furniture & Finalization**: Injects furniture assets and calculates total square footage.
 
-Room Extraction: Parsers the user input into a list of room objects.
-Connection Extraction: Identifies adjacency and openings (doors/windows).
-Room Positioning: Calculates [x, y] coordinates based on room dimensions and connectivity.
-Furniture & Finalization: Injects furniture assets and calculates total square footage.
 
 ## 🚀 Getting Started
 
