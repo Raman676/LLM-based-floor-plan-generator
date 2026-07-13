@@ -1,4 +1,5 @@
 # 🏗️ AI Floor Plan Generator
+colab link : https://colab.research.google.com/drive/1dBhAPwqohhNzaXaG3H4EADK80KueqfNL?usp=sharing
 
 This project implements a multi-stage **LangGraph** workflow to transform natural language descriptions into structured floor plan JSON data. It leverages **LangChain**, **HuggingFace LLMs**, and **Pydantic** for robust data extraction and spatial positioning.
 
